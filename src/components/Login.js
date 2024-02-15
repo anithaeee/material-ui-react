@@ -7,8 +7,15 @@ const label = { inputProps: { "aria-label": "Checkbox demo" } };
 const Login = () => {
   const [Email , setEmail] = useState("");
   const [password , setpassword] = useState("");
+  
+
+  const handleLogin = (e) =>{
+    e.preventDefault();
+    console.log(Email);
+    console.log(password);
+  }
   return (
-    <form>
+    <form onSubmit={handleLogin}>
       <Box sx={{ width: "100%", background: "white" }}>
         <Typography
           variant="h1"
@@ -42,8 +49,8 @@ const Login = () => {
           </Typography>
         </Box>
         <Button variant="contained" onClick={()=>{
-          console.log("Email:",Email);
-          console.log("password:",password);
+           console.log("Email:",Email);
+           console.log("password:",password);
         }}>Register</Button>
       </Box>
     </form>
